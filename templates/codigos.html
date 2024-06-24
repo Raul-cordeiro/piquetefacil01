@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Aplicativo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Estilo geral */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo para o header */
+       /* Estilo para o header */
+       header {
+            background-color: #9ACD32; /* Verde limão */
+            padding: 10px 0; /* Espaçamento interno de 10px no topo e na base */
+            display: flex;
+            flex-direction: column; /* Empilha os elementos verticalmente */
+            align-items: center; /* Centraliza itens na vertical */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .navbar {
+            background-color: #0b8219; /* Cor de fundo para a barra de navegação */
+            width: 100%; /* Ocupa toda a largura disponível */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centraliza itens horizontalmente */
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            height: 150px;
+            display: flex;
+            align-items: center; /* Alinha a imagem verticalmente com o texto */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        .logo-container img {
+            max-width: 30%; /* Largura máxima da imagem */
+            height: auto; /* Mantém a proporção da altura automaticamente */
+            margin-right: 10px; /* Espaçamento à direita da imagem */
+        }
+
+        .header-content {
+            color: white; /* Cor do texto no header */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        main {
+            text-align: center; /* Centraliza o conteúdo do main */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='img/logofacil.png') }}" alt="Logo do Meu Aplicativo">
+            <div class="header-content">
+                <h1>PiqueteFacíl</h1>
+                <p>Seja Bem Vindo ao Piquete Fácil Sua solução em piquetagem</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contatos') }}">Nosso Time</a></li>
+                <li><a href="{{ url_for('codigos') }}">Codigos</a></li>
+                <!-- Adicione mais itens de menu conforme necessário -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Exemplos de Códigos</h1>
+        <p>COPIE OS CÓDIGOS SEM OS '5' PRIMEROS DIGITOS--Uso para teste </p>
+        <p>
+            cod_imovel<br>
+94093  GO-5210000-5E857B1C154B4519946F15AF6AA3CC70<br>
+94094  GO-5210000-490240CD592F4506BEAEEA4088B94F3C<br>
+94095  GO-5210000-82BEEB97EB074D2FB4FB0381BE1E11A7<br>
+94096  GO-5210000-223338C216414796AF0A18537E9697A4<br>
+94097  GO-5210000-5326103D3E1048CAB155A203BA977D50<br>
+94098  GO-5210000-CBFB2256E7D14037B34C487411FA894F<br>
+94099  GO-5210000-EB5C48356EDD4A2C840907827857ADFD<br>
+94100  GO-5210000-35B9175857754F4C83AAA233B1B3237E<br>
+94101  GO-5210000-553C75C4820D4A6E8FD2ACE1F776A0B8<br>
+94102  GO-5210000-672FB0B01F3A4A50B4665CE9855A33B5<br>
+94103  GO-5210000-0C3A27E7314B493C929E80798BECE5AE<br>
+94104  GO-5210000-08029C6DD340471290B7B1B55563177A<br>
+94105  GO-5210000-47C1320F14484E7AA910C5AD9692CC07<br>
+94106  GO-5210000-277FA66AB3B44275A441ECD40E825A3C<br>
+94107  GO-5210000-F6B087E52DA34D5C97049B52AE42D37C<br>
+94108  GO-5210000-F2C81805CB3041A3BAA1675F12926812<br>
+94109  GO-5210000-55E9D90DF4EF45709BE827D7DDD2238C<br>
+94110  GO-5210000-F01E538537594AB289F632BDE814B621<br>
+94111  GO-5210000-B668A92374EE4ED1BDC5BBAA194BF619<br>
+94112  GO-5210000-261DE7DE02FD4952810D45AC90BF01EA<br>
+94113  GO-5210000-07110265447F46988594719E76335310<br>
+94114  GO-5210000-C35149DC7C5B4309969D42C170ECF086<br>
+94115  GO-5210000-4C33015F9F1F4028B4288664370512A7<br>
+94116  GO-5210000-B4BACD84844A40F69E01BA5D8937BA2E<br>
+94117  GO-5210000-EEE346CE6F034B78A2A84BA0728999DF<br>
+94118  GO-5210000-E6DB5A7377A5461E9B22C009B5A5277F<br>
+94119  GO-5210000-EAB6E9D2D81640CBB80CA1F25043B1A1<br>
+94120  GO-5210000-4FCF909EA14B441DB0AC03010966C669<br>
+94121  GO-5210000-6E89C7B9EC1E4BE680307406297C41B1<br>
+94122  GO-5210000-30EE38B8F0B2430FB2E6D4A1D029000A<br>
+94123  GO-5210000-7802F95469404C1DB583449DD5FF5EF1<br>
+94124  GO-5210000-CD4773072DBB41F988273930BADC3A14<br>
+94125  GO-5210000-B2208D9E0074426E8FAAE662DC28CB58<br>
+94126  GO-5210000-697410C9525744A2A81BA9C131442662<br>
+94127  GO-5210000-092BF60FBAF040C68D758C33A01DBAD4<br>
+94128  GO-5210000-709CAC1C9B614336918CC42EBAD4C210<br>
+94129  GO-5210000-E7F71B69D359459AA2C6A771292989CA<br>
+94130  GO-5210000-0683A313803D47DE86D6777D8BEDA230<br>
+94131  GO-5210000-DDDC413737FE478B8284538E8AF947B6<br>
+94132  GO-5210000-6ED9B669D5414227A64A026EA685E6E0<br>
+94133  GO-5210000-896E6FC778FE4A599B381736F0143990<br>
+94134  GO-5210000-BB181CFAD3C14194AAB0274D135785AE<br>
+94135  GO-5211404-46C6C919740A43038D3059A3AD1B604A<br>
+94136  GO-5210000-4A39E28F38FA42E4A1E1B8C3C722942E<br>
+94137  GO-5210000-943E3ED89C0B49709C7B1014A89D12CE<br>
+94138  GO-5210000-D0537A84756B4ADC927C770A4925A6EF<br>
+94139  GO-5210000-A4AD43818C004EC2B697F0335A5E8752<br>
+94140  GO-5210000-664C9BBB1A9D4BBEA069A0452275F2B6<br>
+94141  GO-5210000-6D9EAEB989A842CA8D0C9E492075CFBD<br>
+94142  GO-5210000-FA9517A997154C50999F4D40A3C52B26
+        </p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Golplex Sistemas. Todos os direitos reservados. contato(62)98468-7974</p>
+        </div>
+    </footer>
+</body>
+</html>

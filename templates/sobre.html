@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Aplicativo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Estilo geral */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo para o header */
+       /* Estilo para o header */
+       header {
+            background-color: #9ACD32; /* Verde limão */
+            padding: 10px 0; /* Espaçamento interno de 10px no topo e na base */
+            display: flex;
+            flex-direction: column; /* Empilha os elementos verticalmente */
+            align-items: center; /* Centraliza itens na vertical */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .navbar {
+            background-color: #0b8219; /* Cor de fundo para a barra de navegação */
+            width: 100%; /* Ocupa toda a largura disponível */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centraliza itens horizontalmente */
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            height: 150px;
+            display: flex;
+            align-items: center; /* Alinha a imagem verticalmente com o texto */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        .logo-container img {
+            max-width: 30%; /* Largura máxima da imagem */
+            height: auto; /* Mantém a proporção da altura automaticamente */
+            margin-right: 10px; /* Espaçamento à direita da imagem */
+        }
+
+        .header-content {
+            color: white; /* Cor do texto no header */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        main {
+            text-align: center; /* Centraliza o conteúdo do main */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='img/logofacil.png') }}" alt="Logo do Meu Aplicativo">
+            <div class="header-content">
+                <h1>PiqueteFacíl</h1>
+                <p>Seja Bem Vindo ao Piquete Fácil Sua solução em piquetagem</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contatos') }}">Nosso Time</a></li>
+                <li><a href="{{ url_for('codigos') }}">Codigos</a></li>
+                <!-- Adicione mais itens de menu conforme necessário -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Sobre Nós</h1>
+        <p>
+            Quatro universitários perseverantes, até então desconhecidos entre si, uniram-se em busca de um mesmo ideal: montar e vencer o desafio da AgroStartup. O encontro aconteceu na Universidade UniMais, em Inhumas-GO, no dia do desafio, onde alcançaram o 2º lugar com a inovadora ideia de Larranny Valadares, zootecnista, de aplicar inteligência artificial na piquetagem.
+        </p>
+        <p>
+            O time é composto pela dedicada agrônoma Eduarda, pelo visionário engenheiro Luiz Henrique, pelo habilidoso gestor financeiro Alessandro Elias e pelo talentoso desenvolvedor Raul Cordeiro. Com um espírito colaborativo e determinado, enfrentaram desafios e adversidades, mostrando resiliência e comprometimento em cada etapa do processo.
+        </p>
+        <p>
+            Com a excelente colocação, foram selecionados para a próxima fase do desafio e agora integram o CampusLab, uma plataforma de inovação onde poderão desenvolver ainda mais suas habilidades e ideias para o futuro da agropecuária com tecnologia de ponta.
+        </p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Golplex Sistemas. Todos os direitos reservados. contato(62)98468-7974</p>
+        </div>
+    </footer>
+</body>
+</html>

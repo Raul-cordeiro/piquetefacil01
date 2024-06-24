@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Aplicativo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Estilo geral */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black; /* Fundo preto para a página */
+            color: rgb(8, 4, 4); /* Cor do texto */
+        }
+
+       /* Estilo para o header */
+       header {
+            background-color: #9ACD32; /* Verde limão */
+            padding: 10px 0; /* Espaçamento interno de 10px no topo e na base */
+            display: flex;
+            flex-direction: column; /* Empilha os elementos verticalmente */
+            align-items: center; /* Centraliza itens na vertical */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .navbar {
+            background-color: #0b8219; /* Cor de fundo para a barra de navegação */
+            width: 100%; /* Ocupa toda a largura disponível */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centraliza itens horizontalmente */
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            height: 150px;
+            display: flex;
+            align-items: center; /* Alinha a imagem verticalmente com o texto */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        .logo-container img {
+            max-width: 30%; /* Largura máxima da imagem */
+            height: auto; /* Mantém a proporção da altura automaticamente */
+            margin-right: 10px; /* Espaçamento à direita da imagem */
+        }
+
+        .header-content {
+            color: white; /* Cor do texto no header */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        main {
+            text-align: center; /* Centraliza o conteúdo do main */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+
+        /* Estilo para os cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            opacity: 0; /* Inicialmente os cards não são visíveis */
+            animation: slideIn 1s ease-out forwards, floatUpDown 3s infinite ease-in-out; /* Animação para deslizar para baixo e flutuar */
+        }
+
+        .card {
+            
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #92f574;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Keyframes para a animação de deslizar para baixo */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px); /* Inicia 50px acima da posição normal */
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0); /* Desce para a posição normal */
+                opacity: 1;
+            }
+        }
+
+        /* Keyframes para a animação de flutuar */
+        @keyframes floatUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px); /* Flutua 5px para cima */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='img/logofacil.png') }}" alt="Logo do Meu Aplicativo">
+            <div class="header-content">
+                <h1>PiqueteFacíl</h1>
+                <p>Seja Bem Vindo ao Piquete Fácil Sua solução em piquetagem</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contatos') }}">Nosso Time</a></li>
+                <li><a href="{{ url_for('codigos') }}">Codigos</a></li>
+                <!-- Adicione mais itens de menu conforme necessário -->
+            </ul>
+        </nav>
+    </header>
+    <h1>Nossa Equipe</h1>
+    
+    <div class="card-container">
+        <!-- Card 1 - Larranny Valadares -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/Lorranny.png') }}" alt="Lorranny Valadares">
+            <h3>Larranny Valadares</h3>
+            <p>Zootecnista</p>
+            <p>Ideia inovadora de aplicar inteligência artificial na piquetagem</p>
+        </div>
+        
+        <!-- Card 2 - Eduarda -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/eduarda.jpg') }}" alt="Eduarda">
+            <h3>Eduarda</h3>
+            <p>Agrônoma</p>
+            <p>Dedicada e comprometida com o desenvolvimento agrícola</p>
+        </div>
+        
+        <!-- Card 3 - Luiz Henrique -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/luiz.jpg') }}" alt="Luiz Henrique">
+            <h3>Luiz Henrique</h3>
+            <p>Engenheiro</p>
+            <p>Visionário e apaixonado por tecnologia no agronegócio</p>
+        </div>
+        
+        <!-- Card 4 - Alessandro Elias -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/alex.jpg') }}" alt="Alessandro Elias">
+            <h3>Alessandro Elias</h3>
+            <p>Gestor Financeiro</p>
+            <p>Experiente em finanças e estratégias para startups</p>
+        </div>
+        
+        <!-- Card 5 - Raul Cordeiro -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/Raul.png') }}" alt="Raul Cordeiro">
+            <h3>Raul Cordeiro</h3>
+            <p>Gestor de T.I. e Desenvolvedor Fullstack</p>
+            <p>Experiente em tecnologias de informação e desenvolvimento de software</p>
+        </div>
+    </div>
+
+    <script>
+        // Exibe os cards gradualmente após o carregamento da página
+        document.addEventListener("DOMContentLoaded", function() {
+            const cardContainer = document.querySelector(".card-container");
+            cardContainer.style.opacity = 1;
+        });
+    </script>
+</body>
+</html>

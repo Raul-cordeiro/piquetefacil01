@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PiqueteFácil{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Estilo geral */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo para o header */
+        header {
+            background-color: #9ACD32; /* Verde limão */
+            padding: 10px 0; /* Espaçamento interno de 10px no topo e na base */
+            display: flex;
+            flex-direction: column; /* Empilha os elementos verticalmente */
+            align-items: center; /* Centraliza itens na vertical */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .navbar {
+            background-color: #0b8219; /* Cor de fundo para a barra de navegação */
+            width: 100%; /* Ocupa toda a largura disponível */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centraliza itens horizontalmente */
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            height: 150px;
+            display: flex;
+            align-items: center; /* Alinha a imagem verticalmente com o texto */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        .logo-container img {
+            max-width: 30%; /* Largura máxima da imagem */
+            height: auto; /* Mantém a proporção da altura automaticamente */
+            margin-right: 10px; /* Espaçamento à direita da imagem */
+        }
+
+        .header-content {
+            color: white; /* Cor do texto no header */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        main {
+            text-align: center; /* Centraliza o conteúdo do main */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+
+        main .item {
+            margin-bottom: 20px; /* Espaçamento inferior entre os itens */
+        }
+
+        footer {
+            background-color: #333; /* Cor de fundo do footer */
+            color: white; /* Cor do texto no footer */
+            text-align: center; /* Centraliza o conteúdo do footer */
+            padding: 20px 0; /* Espaçamento interno no footer */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contatos') }}">Nosso Time</a></li>
+                <li><a href="{{ url_for('codigos') }}">Códigos</a></li>
+                <!-- Adicione mais itens de menu conforme necessário -->
+            </ul>
+        </nav>
+
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='img/logofacil.png') }}" alt="Logo do Meu Aplicativo">
+            <div class="header-content">
+                <h1>PiqueteFacíl</h1>
+                <p>Seja Bem Vindo ao Piquete Fácil Sua solução em piquetagem</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; PiqueteFácil. Todos os direitos reservados. contato(62)98468-7974</p>
+        </div>
+    </footer>
+</body>
+</html>
